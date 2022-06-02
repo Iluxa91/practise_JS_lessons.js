@@ -72,4 +72,3 @@ console.log(isIncludes("Incubator", "table"))
 console.log(isIncludes("Incubator", "Cut"))
 console.log(isIncludes("Incubator", "abc"))
 // https://ru.code-basics.com/languages/javascript
-
