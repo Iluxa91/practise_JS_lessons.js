@@ -4,8 +4,8 @@ function expressionMatter(a, b, c) {
 
 console.log(expressionMatter(9,7,2))
 
-function feast(beast, dish) {return
-beast.slice(-1)==dish.slice(-1)&&beast[0]==dish[0]?true:false
+function feast(beast, dish) {
+    return beast.slice(-1)==dish.slice(-1)&&beast[0]==dish[0]
 }
 
 function multiTable(number) {
