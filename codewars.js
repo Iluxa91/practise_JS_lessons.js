@@ -18,3 +18,20 @@ function multiTable(number) {
 }
 
 console.log(multiTable(5))
+
+
+function assembleString(array){
+    let arr=[]
+    for (let i=0;i<array.length;i++){
+        for (let j=0;j<array[i].length;j++){
+            if(i==0) arr.push(array[i][j])
+            if(arr[j] === '*' || array[i][j] !== '*') arr[j] = array[i][j]
+        }
+    }
+
+    return arr.map(el=>el=='*' ? '#' : el).join('');
+}
+
+console.log(assembleString(["H*llo, W*rld!", "Hel*o, *or*d!", "*ello* World*"]))
+
+
