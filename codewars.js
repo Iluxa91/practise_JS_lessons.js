@@ -35,3 +35,12 @@ function assembleString(array){
 console.log(assembleString(["H*llo, W*rld!", "Hel*o, *or*d!", "*ello* World*"]))
 
 
+
+function sortThePile(pileOfTowels, weeklyUsedTowels) {
+    let resultTowels = pileOfTowels
+    for (let i = 0; i < weeklyUsedTowels.length; i++) {
+        resultTowels = resultTowels.slice(0, pileOfTowels.length - weeklyUsedTowels[i]).concat(resultTowels.slice(-weeklyUsedTowels[i]).sort().reverse())
+    }
+    return resultTowels
+}
+console.log(sortThePile(["blue", "red", "blue", "red", "blue"], [2, 1, 4, 2]))
