@@ -44,3 +44,16 @@ function sortThePile(pileOfTowels, weeklyUsedTowels) {
     return resultTowels
 }
 console.log(sortThePile(["blue", "red", "blue", "red", "blue"], [2, 1, 4, 2]))
+
+function differences(a) {
+    if (a.length>1){
+        let res = []
+        for (let i=0;i<a.length-1;i++){
+            res.push(Math.abs(a[i]-a[i+1]))
+        }
+        return differences(res)
+    }
+    return a[0]
+}
+
+console.log(differences([1,5,2,7,8,9,0]))

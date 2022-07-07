@@ -354,38 +354,38 @@
 // list.has(4)          true
 // list.has(6)          false
 
-class LinkedList {
-    #head = null
-    #tail = null
-
-    constructor(...values) {
-       values.forEach(v=>{
-           this.add(v)
-       })
-    }
-    add(value){
-        const node = new ListNode(value)
-        if(!this.#head){
-            this.#head = node
-        } else if (this.#tail) {
-            this.#head.next = node
-            this.#tail = node
-        } else {
-            const oldTail = this.#tail
-            this.#tail = node
-            oldTail.next = node
-        }
-    }
-    has(value){
-        let current = this.#head
-        let isValue = current.value === value
-        while (current.next){
-            current = current.next
-            if(current.value===value){
-                isValue = true
-                break
-            }
-        }
-        return isValue
-    }
-}
+// class LinkedList {
+//     #head = null
+//     #tail = null
+//
+//     constructor(...values) {
+//        values.forEach(v=>{
+//            this.add(v)
+//        })
+//     }
+//     add(value){
+//         const node = new ListNode(value)
+//         if(!this.#head){
+//             this.#head = node
+//         } else if (this.#tail) {
+//             this.#head.next = node
+//             this.#tail = node
+//         } else {
+//             const oldTail = this.#tail
+//             this.#tail = node
+//             oldTail.next = node
+//         }
+//     }
+//     has(value){
+//         let current = this.#head
+//         let isValue = current.value === value
+//         while (current.next){
+//             current = current.next
+//             if(current.value===value){
+//                 isValue = true
+//                 break
+//             }
+//         }
+//         return isValue
+//     }
+// }
