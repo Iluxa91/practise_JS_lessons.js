@@ -77,7 +77,7 @@
 // }
 //
 //
-// // Merge overlapping strings
+// ___________________Merge overlapping strings_______________
 // function mergeStrings(first, second){
 //     let result=first+second
 //     for (let i =0;i<first.length;i++){
@@ -88,7 +88,7 @@
 //     return result
 // }
 
-// Average Fuel Consumption
+// __________________Average Fuel Consumption______________
 
 // function solve(before, after) {
 //     return +((after[0] * after[1] - before[0] * before[1]) / (after[1] - before[1])).toFixed(1)
@@ -97,12 +97,41 @@
 // console.log(solve([7.9, 100], [7.0, 600]))
 
 
-
-// Find the Speedcuber's times!
+// ___________Find the Speedcuber's times!_________________
 
 // function cubeTimes(times) {
 //     let res = +(times.sort((a,b)=>a-b).slice(1,4).reduce((acc,num)=>acc+num,0)/3).toFixed(2)
 // return [res,Math.min(...times)]
 // }
-// let times = [9.5, 7.6, 11.4, 10.5, 8.1]
+// let times = [9.5, 7.6, 1]
+//
+// class Samurai {
+// //     constructor(name) {
+// //         this.name = name
+// //     }
+// //     hello() {
+// //         alert(this.name)
+// //     }
+// // }
+// //
+// // let shogun = new Samurai('dimich')
+// //
+// // console.log(shogun.__proto__.__proto__ === Object.prototype) //true
+// // console.log(shogun.__proto__.constructor.__proto__ === Function.prototype ) //true
+// // console.log(shogun.__proto__.__proto__.__proto__ === null) //true
+// // debugger1.4, 10.5, 8.1]
 // console.log(cubeTimes(times))
+
+
+//______________True Min_________________
+function min(a, b){
+    a === null && (a = 0);
+    b === null && (b = 0);
+    if (isNaN(a) || isNaN(b)) { return NaN; }
+    return (a < b) ? a : b;
+}
+
+//______________Get key/value pairs as arrays_________
+function keysAndValues(data){
+    return [Object.keys(data), Object.values(data)];
+}
