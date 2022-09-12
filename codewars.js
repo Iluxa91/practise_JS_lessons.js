@@ -135,3 +135,9 @@ function min(a, b){
 function keysAndValues(data){
     return [Object.keys(data), Object.values(data)];
 }
+
+// ______________Predict your age ______________________
+function predictAge(...args){
+    let arr = [...args]
+    return Math.floor(Math.sqrt(arr.map(a => a * a).reduce((b,c) => b + c)) / 2)
+}
