@@ -124,20 +124,51 @@
 
 
 //______________True Min_________________
-function min(a, b){
+function min(a, b) {
     a === null && (a = 0);
     b === null && (b = 0);
-    if (isNaN(a) || isNaN(b)) { return NaN; }
+    if (isNaN(a) || isNaN(b)) {
+        return NaN;
+    }
     return (a < b) ? a : b;
 }
 
 //______________Get key/value pairs as arrays_________
-function keysAndValues(data){
+function keysAndValues(data) {
     return [Object.keys(data), Object.values(data)];
 }
 
 // ______________Predict your age ______________________
-function predictAge(...args){
+function predictAge(...args) {
     let arr = [...args]
-    return Math.floor(Math.sqrt(arr.map(a => a * a).reduce((b,c) => b + c)) / 2)
+    return Math.floor(Math.sqrt(arr.map(a => a * a).reduce((b, c) => b + c)) / 2)
+}
+
+
+//_____________________SAGA_____________________________
+const api = {
+    getUsers() {
+        const promise = new Promise((res) => {
+                setTimeout(() => {
+                    res("users from server")
+                }, 2000)
+            }
+        )
+        return promise
+    }
+}
+
+function* giveMoney() {
+    let users = yield api.getUsers()
+    yield 500
+    yield 400
+}
+//_____SAGA Middleware_____
+let generator = giveMoney()
+let res = generator.next()
+console.log(res)
+if (res.value.constructor.name==='Promise'){
+    res.value.then((data)=>{
+        alert(data)
+    })
 }
